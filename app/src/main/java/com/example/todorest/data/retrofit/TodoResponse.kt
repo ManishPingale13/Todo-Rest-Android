@@ -1,4 +1,4 @@
-package com.example.todorest.retrofit
+package com.example.todorest.data.retrofit
 
 data class TodoResponse(
     val description: String,

@@ -1,4 +1,4 @@
-package com.example.todorest.di
+package com.example.todorest
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
