@@ -23,7 +23,6 @@ class TodoViewModel @Inject constructor(
     private val todoLiveData = MutableLiveData<List<TodoResponse>>()
     val todos: LiveData<List<TodoResponse>> = todoLiveData
 
-
     init {
         viewModelScope.launch {
             try {
@@ -31,7 +30,8 @@ class TodoViewModel @Inject constructor(
                 val date = formatter.format(Date()).toString()
                 todoLiveData.value =
                     listOf(
-                        todoRepository.updateTodo(1,
+                        todoRepository.updateTodo(
+                            1,
                             TodoResponse(
                                 "This task was updated from android app using Retrofit ! Pretty cool stuff",
                                 null,
@@ -41,10 +41,10 @@ class TodoViewModel @Inject constructor(
                         )
                     )
             } catch (e: HttpException) {
-                when(e.code()){
-                    404-> println("The task you are trying to update does not exist $e")
-                    500-> println("Something went wrong $e")
-                    400-> println("Data not valid $e")
+                when (e.code()) {
+                    404 -> println("The task you are trying to update does not exist $e")
+                    500 -> println("Something went wrong $e")
+                    400 -> println("Data not valid $e")
                 }
             } catch (e: Exception) {
                 println("Unexpected error occurred ! $e")

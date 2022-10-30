@@ -5,14 +5,18 @@ import retrofit2.Response
 
 interface TodoRepository {
 
-    // Get list of all todos
-    suspend fun getTodos():List<TodoResponse>
+    // Get list of all tasks
+    suspend fun getTodos(): List<TodoResponse>
 
-    suspend fun getTodo(todoId:Int):TodoResponse
+    //Get a single task by id
+    suspend fun getTodo(todoId: Int): TodoResponse
 
-    suspend fun deleteTodo(todoId: Int):Response<String>
+    //Delete a single task
+    suspend fun deleteTodo(todoId: Int): Response<String>
 
-    suspend fun addTodo(todo:TodoResponse):TodoResponse
+    //Add a task
+    suspend fun addTodo(todo: TodoResponse): TodoResponse
 
-    suspend fun updateTodo(id:Int,todo:TodoResponse):TodoResponse
+    //Update perticular task
+    suspend fun updateTodo(id: Int, todo: TodoResponse): TodoResponse
 }

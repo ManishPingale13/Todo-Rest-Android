@@ -16,6 +16,6 @@ class TodoRepositoryImpl(
 
     override suspend fun addTodo(todo: TodoResponse) = todoApi.addTodo(todo)
 
-    override suspend fun updateTodo(id:Int,todo: TodoResponse) = todoApi.updateTodo(id,todo)
+    override suspend fun updateTodo(id: Int, todo: TodoResponse) = todoApi.updateTodo(id, todo)
 
 }

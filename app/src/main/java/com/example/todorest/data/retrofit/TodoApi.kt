@@ -12,17 +12,16 @@ interface TodoApi {
     suspend fun getTodos(): List<TodoResponse>
 
     @GET("getTodo/{id}")
-    suspend fun getTodo(@Path("id") id:Int): TodoResponse
+    suspend fun getTodo(@Path("id") id: Int): TodoResponse
 
     @DELETE("deleteTodo/{id}")
-    suspend fun deleteTodo(@Path("id") id:Int):Response<String>
+    suspend fun deleteTodo(@Path("id") id: Int): Response<String>
 
     @POST("addTodo")
     suspend fun addTodo(@Body todoResponse: TodoResponse): TodoResponse
 
     @PUT("updateTodo/{id}")
-    suspend fun updateTodo(@Path("id") id: Int,@Body todoResponse: TodoResponse):TodoResponse
-
+    suspend fun updateTodo(@Path("id") id: Int, @Body todoResponse: TodoResponse): TodoResponse
 
 }
 
